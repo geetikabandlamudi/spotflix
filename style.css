@@ -1,0 +1,510 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: auto 30px;
+  font-family: 'Lato', sans-serif;
+}
+
+.logo-main-menu {
+  justify-content: space-between;
+}
+#logout-icon {
+  cursor: pointer;
+}
+.logo img {
+  margin-right: 10px;
+}
+
+h2 {
+  color: #333;
+}
+
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px 30px 10px 30px;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
+
+.main-top-bar {
+  justify-content: space-between;
+}
+
+.search-class {
+  display: flex;
+  align-items: center;
+}
+
+.search-class .search-bar {
+  padding: 10px;
+  border: none;
+  width: 70%;
+  min-width: 700px;
+  box-sizing: border-box;
+}
+
+.search-button {
+  background-color: #673AB7;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-left: 20px;
+  border-radius: 2px;
+}
+
+.search-button:hover {
+  background-color: #7E57C2;
+}
+
+#microphone-icon {
+  padding: 10px;
+  width: 12px;
+  color: #673AB7;
+  margin-left: -35px;
+}
+#microphone-icon:hover {
+  cursor: pointer;
+}
+
+.upload-container {
+  display: flex;
+  align-items: center;
+}
+
+.upload-button {
+  background-color: #673AB7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  transition: all 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #7E57C2;
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 10px;
+}
+
+.upload-button i {
+  margin-right: 10px;
+}
+/* Style the custom button */
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #0074D9;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Change the button text color when hovering over it */
+.custom-file-upload:hover {
+  color: #fff;
+  background-color: #0063ae;
+}
+
+/* Upload Video */
+.upload-popup {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  
+}
+
+.upload-popup form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 50px;
+}
+
+.upload-popup form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.upload-popup form input[type="text"],
+.upload-popup form input[type="file"] {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 95%;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.upload-popup form button[type="button"] {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#upload-popup-button {
+  background-color: #4CAF50;
+}
+
+#upload-popup-button:hover {
+  background-color: #3e8e41;
+}
+
+
+.upload-popup form .close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  color: #aaa;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.upload-popup form .close-btn:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+
+/* Main section */
+
+.main-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Featured video section */
+
+#featured-video {
+  width:100%;
+  height:650px;
+}
+.active-video {
+  text-align: center;
+  padding: 20px;
+  width: 70%;
+}
+
+.active-video h1 {
+  margin-top: 0;
+}
+
+.active-video iframe {
+  margin: 10px auto;
+  display: block;
+  height: 600px;
+}
+
+video{
+  margin: 0;
+  width:100%;
+  height: 100%;
+}
+
+.active-video p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.active-video ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.active-video li {
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+#active-video-desc {
+  width: 80%;
+  margin: 20px auto;
+  overflow: auto;
+  max-height: 200px;
+  background-color: #f8f8f8;
+}
+
+/* Recommended videos section */
+.recommended-videos {
+  width: 30%;
+  margin: 30px;
+  text-align: center;
+}
+
+.recommended-videos-list-wrapper {
+  height: 600px; 
+  overflow-y: scroll;
+  background-color: #f8f8f8;
+}
+.recommended-videos a {
+  display: flex;
+  text-decoration: none;
+  color: #333;
+  max-width: 500px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.recommended-videos a div {
+  text-align: left;
+  align-self: center;
+}
+
+.recommended-videos a:hover {
+  background-color: #eee;
+}
+
+.recommended-videos img {
+  width: 250px;
+  height: 180px;
+  display: block;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.recommended-videos ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+.recommended-videos li {
+  margin-bottom: 10px;
+}
+.recommended-videos a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.recommended-videos p {
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.recommended-videos .author-style{
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  color: #888;
+}
+
+
+/* Autoplay section */
+.autoplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.toggle-slider-wrap {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.slider-label {
+  margin-right: 10px;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 25px;
+  height: 13px;
+  margin-right: 10px;
+}
+
+.toggle-slider-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.toggle-slider-checkbox:checked + .toggle-slider-label {
+  background-color: #673AB7;
+}
+
+.toggle-slider-label:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 1.5px;
+  left: 1.5px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.toggle-slider-checkbox:checked + .toggle-slider-label:before {
+  transform: translateX(12px);
+}
+
+
+
+/* Login screen */
+
+
+.login-container {
+    width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+
+.login-container h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 28px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.login-container input {
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#login-button {
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #673AB7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Signup screen */
+
+.signup-container {
+  width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.signup-container  h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+}
+
+.signup-container  form {
+  margin-top: 30px;
+}
+
+.signup-container  .form-group {
+  margin-bottom: 20px;
+}
+
+.signup-container  label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.signup-container input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.signup-container  button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #673AB7;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-container  button:hover {
+  background-color: #673AB7;
+}
+
+.signup-container  p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-container  a {
+  color: #673AB7;
+}

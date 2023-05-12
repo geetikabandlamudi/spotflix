@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spotflix - Your music partner</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <link href="./assets/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+  
+  <script src="./assets/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+  <script src="./assets/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+  <script src="./assets/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+  <script src="./assets/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+  <script src="./assets/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+  <script src="./assets/js/sdk/lib/url-template/url-template.js"></script>
+  <script src="./assets/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+  <script src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+  <script src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+  <script src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+
+  <script src="./assets/js/sdk/apigClient.js"></script>
+  <script src="./assets/js/aws-sdk.min.js"></script>
+  <script src="./assets/js/aws-sdk-2.1341.0.js"></script>
+
+
+  <div class="logo logo-main-menu">
+    <div>
+      <img src="./assets/static/icon.webp" alt="Spotflix Logo" width="40px" height="40px">
+      <span style="vertical-align: super;">Spotflix</span>
+    </div>
+    <div>
+      <i class="profile-icon fa fa-sign-out" id="logout-icon" aria-hidden="true"></i>
+    </div>
+  </div>
+</head>
+<body>
+  
+  <div class="top-bar main-top-bar">
+
+    <section class="search-class">
+      <input class="search-bar" type="text" placeholder="Search" id="search-bar">
+      <i class="fa fa-microphone fa-1x" id="microphone-icon"></i>
+      <button class="search-button" id="search-submit">Search</button>
+    </section>
+
+    <div class="upload-container">
+      <!-- <label for="fileInput" class="custom-file-upload">Choose File</label>
+      <input type="file" name="file" id="fileInput" style="display: none;"> -->
+      <button class="upload-button" id="upload-video"><i class="fa fa-upload"></i> Upload</button>
+    </div>
+  </div>
+    
+  <div class="upload-popup" style="display: none;">
+    <form>
+      <label for="uploaded-video-name">Video Name:</label>
+      <input type="text" id="uploaded-video-name" name="uploaded-video-name">
+      <label for="uploaded-video-author">Video Author:</label>
+      <input type="text" id="uploaded-video-author" name="uploaded-video-author">
+      <!-- <label for="fileInput" class="custom-file-upload">Choose File</label> -->
+      <input type="file" name="file" id="fileInput">
+      <button type="button" id="upload-popup-button">Upload</button>
+      <span id="upload-message"></span>
+      <button type="button" class="close-btn">X</button>
+    </form>
+  </div>
+
+  <div class="main-section">
+    
+
+  <section class="active-video">
+    <h2 id="featured-title">Featured Video Title</h2>
+    
+    <!-- <iframe width="100%" height="100%" 
+    id="featured-video" allow-same-origin 
+    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe> -->
+
+    <video id="featured-video" controls autoplay></video>
+    <div id="active-playing-song-name" style="display: none;"></div>
+    <div id="active-playing-dominant-genre" style="display: none;"></div>
+    <div id="active-video-desc">Description</div>
+  </section>
+  <section class="recommended-videos">
+    <div class="autoplay">
+      <h2 id="left-pane-heading">Recommended Videos</h2>
+      <div class="toggle-slider-wrap">
+        <!-- <span class="slider-label">Autoplay</span> -->
+        <div class="toggle-slider" title="Autoplay">
+          <input type="checkbox" id="fork-toggle" name="fork-toggle" class="toggle-slider-checkbox">
+          <label for="fork-toggle" class="toggle-slider-label"></label>
+        </div>
+      </div>          
+    </div>
+    <section class="recommended-videos-list-wrapper">
+    <ul id="recommendation-list">
+      <li>
+        <a href="#">
+          <img src="./assets/static/thumbnail1.png" alt="Video Thumbnail">
+          <div>
+            <p>Recommended Video Title 1</p>
+            <p class='author-style'>Author Name</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./assets/static/thumbnail1.png" alt="Video Thumbnail">
+          <div>
+            <p>Recommended Video Title 2</p>
+            <p class='author-style'>Author Name</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./assets/static/thumbnail1.png" alt="Video Thumbnail">
+          <div>
+            <p>Recommended Video Title 3</p>
+            <p class='author-style'>Author Name</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
+  </section>
+</div>
+
+
+  <script>
+
+    var sdk = apigClientFactory.newClient({});
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.min.js"><\/script>')</script> -->
+  <!-- <script src="./assets/js/bootstrap.min.js"></script> -->
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!-- <script src="./assets/js/ie10-viewport-bug-workaround.js"></script> -->
+  <!-- custom scroll bar -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
+  <!-- chat js -->
+  
+  <script src="./assets/js/chat.js"></script>
+
+</body>
+</html>
